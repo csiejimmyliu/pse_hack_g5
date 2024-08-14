@@ -1,12 +1,14 @@
 import { Identity, Group, generateProof, verifyProof } from "@semaphore-protocol/core"
 import { buildPoseidon } from 'circomlibjs';
 import { writeFile } from 'fs/promises';
+import { stringify } from 'bigint-json';
+import { writeFileSync } from 'fs';
 //hash function
 //fixing the private key for demo
 const poseidon = await buildPoseidon();
 
 //tw, usa
-const identity1 = new Identity(poseidon([1n]))
+const identity1 = new Identity(poseidon([2n]))
 
 //tw
 const identity2 = new Identity(poseidon([2n]))
@@ -37,7 +39,7 @@ const groupTW = new Group([identity1.commitment, identity2.commitment, identity3
 const groupUSA = new Group([identity1.commitment, identity4.commitment, identity5.commitment, identity6.commitment])
 
 //scope
-const scope1 ="Presidential Election"
+const scope1 = "Presidential Election"
 const scope2 = "Referendum"
 
 //message
@@ -60,6 +62,7 @@ const USA_R_3 = "Z"
 const proof1 = await generateProof(identity1, groupTW, TW_PE_1, scope1)
 const proof2 = await generateProof(identity2, groupTW, TW_PE_1, scope1)
 const proof3 = await generateProof(identity3, groupTW, TW_PE_2, scope1)
+
 
 //TW_R
 const proof4 = await generateProof(identity2, groupTW, TW_R_1, scope2)
@@ -92,6 +95,23 @@ proof15.merkleTreeRoot = proof1.merkleTreeRoot
 const proof16 = proof1
 proof16.message = proof3.message
 
+
+function proof_js_to_sol(proof) {
+    const arr = []
+    arr.push(proof.merkleTreeDepth)
+    arr.push(BigInt(proof.merkleTreeRoot))
+    arr.push(BigInt(proof.nullifier))
+    arr.push(BigInt(proof.message))
+    arr.push(BigInt(proof.scope))
+    const points = []
+    for (var i = 0; i < proof.points.length; ++i) {
+        points.push(BigInt(proof.points[i]))
+    }
+    arr.push(points)
+    return arr
+}
+
+/*
 var pool = [
     proof1,
     proof2,
@@ -110,13 +130,40 @@ var pool = [
     proof15,
     proof16
 ]
+*/
+
+var pool = [
+    proof_js_to_sol(proof1),
+    proof_js_to_sol(proof2),
+    proof_js_to_sol(proof3),
+    proof_js_to_sol(proof4),
+    proof_js_to_sol(proof5),
+    proof_js_to_sol(proof6),
+    proof_js_to_sol(proof7),
+    proof_js_to_sol(proof8),
+    proof_js_to_sol(proof9),
+    proof_js_to_sol(proof10),
+    proof_js_to_sol(proof11),
+    proof_js_to_sol(proof12),
+    proof_js_to_sol(proof13),
+    proof_js_to_sol(proof14),
+    proof_js_to_sol(proof15),
+    proof_js_to_sol(proof16),
+]
 
 
-const jsonString = JSON.stringify(pool, null, 2);
+function formatBigIntValue(value) {
+    if (Array.isArray(value)) {
+        return `[${value.map(formatBigIntValue).join(', ')}]`;
+    }
+    return typeof value === 'bigint' ? value.toString() : value;
+}
+
+const formattedString = pool.map(formatBigIntValue).join('\n');
+writeFileSync('output.txt', formattedString, 'utf-8');
+/*
+const jsonString = stringify(pool, null, 2);
 await writeFile('vote.json', jsonString, 'utf-8');
+*/
 console.log('Successfully wrote to file');
-
-//const isValid = await verifyProof(proof);
-
-
 process.exit(1);
