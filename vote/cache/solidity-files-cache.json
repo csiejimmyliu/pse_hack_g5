@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/home/timou/pse_hack_g5/vote/contracts/SemaphoreVote.sol": {
-      "lastModificationDate": 1723735281545,
-      "contentHash": "7f6a3525352da655b59675c8fa29aae5",
+      "lastModificationDate": 1723740922916,
+      "contentHash": "1d417c322a48247ab09eef59996d7c49",
       "sourceName": "contracts/SemaphoreVote.sol",
       "solcConfig": {
         "version": "0.8.23",

@@ -185,7 +185,7 @@ contract SemaphoreVote is ISemaphore, SemaphoreGroups {
     // =================================================================================
     // function proof_js_to_sol(proof) {const arr = []; arr.push(proof.merkleTreeDepth); arr.push(BigInt(proof.merkleTreeRoot)); arr.push(BigInt(proof.nullifier)); arr.push(BigInt(proof.message)); arr.push(BigInt(proof.scope)); const points = []; for (var i = 0; i < proof.points.length; ++i) {points.push(BigInt(proof.points[i]));} arr.push(points); return arr}
 
-    function createPoll(uint256 groupId, string memory scope, uint256 options, uint256 duration) public /*onlyGroupAdmin(groupId)*/ {
+    function createPoll(uint256 groupId, string memory scope, uint256 options, uint256 duration) public onlyGroupAdmin(groupId) {
         uint256[] memory record = new uint256[](options);
         polls.push(Poll(groupId, scope, options, record, block.timestamp, duration, false));
 
