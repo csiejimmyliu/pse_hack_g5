@@ -229,7 +229,6 @@ contract SemaphoreVote is ISemaphore, SemaphoreGroups {
         return result;
     }
     function stringToUint(string memory s) public pure returns (uint256) {
-        bytes memory a = bytes(s);
-        return uint256(bytes32(a));
+        return uint256(bytes32(bytes(s)));
     }
 }
