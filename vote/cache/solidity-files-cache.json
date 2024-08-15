@@ -1,0 +1,368 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/timou/pse_hack_g5/vote/contracts/SemaphoreVote.sol": {
+      "lastModificationDate": 1723735281545,
+      "contentHash": "7f6a3525352da655b59675c8fa29aae5",
+      "sourceName": "contracts/SemaphoreVote.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "node_modules/@semaphore-protocol/contracts/interfaces/ISemaphore.sol",
+        "node_modules/@semaphore-protocol/contracts/interfaces/ISemaphoreVerifier.sol",
+        "node_modules/@semaphore-protocol/contracts/base/SemaphoreGroups.sol",
+        "node_modules/@semaphore-protocol/contracts/base/Constants.sol"
+      ],
+      "versionPragmas": [
+        "0.8.23"
+      ],
+      "artifacts": [
+        "SemaphoreVote"
+      ]
+    },
+    "/home/timou/pse_hack_g5/vote/node_modules/@semaphore-protocol/contracts/interfaces/ISemaphore.sol": {
+      "lastModificationDate": 1723691184778,
+      "contentHash": "6790ee5a3f8534e7383b264257a95a77",
+      "sourceName": "node_modules/@semaphore-protocol/contracts/interfaces/ISemaphore.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.23"
+      ],
+      "artifacts": [
+        "ISemaphore"
+      ]
+    },
+    "/home/timou/pse_hack_g5/vote/node_modules/@semaphore-protocol/contracts/base/SemaphoreGroups.sol": {
+      "lastModificationDate": 1723691184778,
+      "contentHash": "05f87da050a15b5c2824dffd7ee87076",
+      "sourceName": "node_modules/@semaphore-protocol/contracts/base/SemaphoreGroups.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/ISemaphoreGroups.sol",
+        "@zk-kit/lean-imt.sol/InternalLeanIMT.sol"
+      ],
+      "versionPragmas": [
+        "0.8.23"
+      ],
+      "artifacts": [
+        "SemaphoreGroups"
+      ]
+    },
+    "/home/timou/pse_hack_g5/vote/node_modules/@semaphore-protocol/contracts/base/Constants.sol": {
+      "lastModificationDate": 1723691184778,
+      "contentHash": "887d8aa6761f9e1817381ba0d01d56f8",
+      "sourceName": "node_modules/@semaphore-protocol/contracts/base/Constants.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.23"
+      ],
+      "artifacts": []
+    },
+    "/home/timou/pse_hack_g5/vote/node_modules/@semaphore-protocol/contracts/interfaces/ISemaphoreVerifier.sol": {
+      "lastModificationDate": 1723691184778,
+      "contentHash": "188011235c5392d79d999638d22e3089",
+      "sourceName": "node_modules/@semaphore-protocol/contracts/interfaces/ISemaphoreVerifier.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.23"
+      ],
+      "artifacts": [
+        "ISemaphoreVerifier"
+      ]
+    },
+    "/home/timou/pse_hack_g5/vote/node_modules/@semaphore-protocol/contracts/interfaces/ISemaphoreGroups.sol": {
+      "lastModificationDate": 1723691184778,
+      "contentHash": "d971f7ddb92f53fdc32ce7bd7d6284d5",
+      "sourceName": "node_modules/@semaphore-protocol/contracts/interfaces/ISemaphoreGroups.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.23"
+      ],
+      "artifacts": [
+        "ISemaphoreGroups"
+      ]
+    },
+    "/home/timou/pse_hack_g5/vote/node_modules/@zk-kit/lean-imt.sol/InternalLeanIMT.sol": {
+      "lastModificationDate": 1723691184778,
+      "contentHash": "76b9d979badf6588bde53fb491ab00c9",
+      "sourceName": "@zk-kit/lean-imt.sol/InternalLeanIMT.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "poseidon-solidity/PoseidonT3.sol",
+        "./Constants.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.4"
+      ],
+      "artifacts": [
+        "InternalLeanIMT"
+      ]
+    },
+    "/home/timou/pse_hack_g5/vote/node_modules/poseidon-solidity/PoseidonT3.sol": {
+      "lastModificationDate": 1723691184778,
+      "contentHash": "88a3db6023abdf06f44823c05f81f69e",
+      "sourceName": "poseidon-solidity/PoseidonT3.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.0"
+      ],
+      "artifacts": [
+        "PoseidonT3"
+      ]
+    },
+    "/home/timou/pse_hack_g5/vote/node_modules/@zk-kit/lean-imt.sol/Constants.sol": {
+      "lastModificationDate": 1723691184778,
+      "contentHash": "f8b2aa1a7d19380722cb6045ffc42c0f",
+      "sourceName": "@zk-kit/lean-imt.sol/Constants.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.4"
+      ],
+      "artifacts": []
+    },
+    "/home/timou/pse_hack_g5/vote/contracts/Test.sol": {
+      "lastModificationDate": 1723691671028,
+      "contentHash": "e2639a3d2bbb56b9b839e9f5bea869ff",
+      "sourceName": "contracts/Test.sol",
+      "solcConfig": {
+        "version": "0.8.23",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    }
+  }
+}

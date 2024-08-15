@@ -5,5 +5,6 @@
 ## install
 ```bash
 yarn add @semaphore-protocol/core
+yarn add @semaphore-protocol/contracts
 yarn add circomlibjs
 ```

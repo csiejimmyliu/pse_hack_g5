@@ -7,17 +7,24 @@ import { writeFileSync } from 'fs';
 //fixing the private key for demo
 const poseidon = await buildPoseidon();
 
+const pk1 = "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80"
+const pk2 = "0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690d"
+const pk3 = "0x5de4111afa1a4b94908f83103eb1f1706367c2e68ca870fc3fb9a804cdab365a"
+const pk4 = "0x7c852118294e51e653712a81e05800f419141751be58f605c371e15141b007a6"
+const pk5 = "0x47e179ec197488593b187f80a00eb0da91f1b9d0b13f8733639f19c30a34926a"
+const pk6 = "0x8b3a350cf5c34c9194ca85829a2df0ec3153be0318b5e2d3348e872092edffba"
+
 //tw, usa
-const identity1 = new Identity(poseidon([2n]))
+const identity1 = new Identity(pk1)
 
 //tw
-const identity2 = new Identity(poseidon([2n]))
-const identity3 = new Identity(poseidon([3n]))
+const identity2 = new Identity(pk2)
+const identity3 = new Identity(pk3)
 
 //usa
-const identity4 = new Identity(poseidon([4n]))
-const identity5 = new Identity(poseidon([5n]))
-const identity6 = new Identity(poseidon([6n]))
+const identity4 = new Identity(pk4)
+const identity5 = new Identity(pk5)
+const identity6 = new Identity(pk6)
 
 /*
 //random
@@ -43,57 +50,57 @@ const scope1 = "Presidential Election"
 const scope2 = "Referendum"
 
 //message
-const TW_PE_1 = "Alice"
-const TW_PE_2 = "Bob"
-const USA_PE_1 = "Charlie"
-const USA_PE_2 = "Daniel"
+const TW_PE_1 = "0" //"Alice"
+const TW_PE_2 = "1" //"Bob"
+const USA_PE_1 = "0" //"Charlie"
+const USA_PE_2 = "1" //"Daniel"
 
-const TW_R_1 = "J"
-const TW_R_2 = "K"
-const USA_R_1 = "X"
-const USA_R_2 = "Y"
-const USA_R_3 = "Z"
+const TW_R_1 = "0" //"J"
+const TW_R_2 = "1" //"K"
+const USA_R_1 = "0" //"X"
+const USA_R_2 = "1" //"Y"
+const USA_R_3 = "2" //"Z"
 
 
 
 
 //vote
 //TW_PE
-const proof1 = await generateProof(identity1, groupTW, TW_PE_1, scope1)
-const proof2 = await generateProof(identity2, groupTW, TW_PE_1, scope1)
-const proof3 = await generateProof(identity3, groupTW, TW_PE_2, scope1)
+const proof1 = await generateProof(identity1, groupTW, TW_PE_1, scope1) // V
+const proof2 = await generateProof(identity2, groupTW, TW_PE_1, scope1) // V
+const proof3 = await generateProof(identity3, groupTW, TW_PE_2, scope1) // V
 
 
 //TW_R
-const proof4 = await generateProof(identity2, groupTW, TW_R_1, scope2)
+const proof4 = await generateProof(identity2, groupTW, TW_R_1, scope2) // V
 
 
 
 //USA_PE
-const proof5 = await generateProof(identity1, groupUSA, USA_PE_1, scope1)
-const proof6 = await generateProof(identity4, groupUSA, USA_PE_2, scope1)
-const proof7 = await generateProof(identity5, groupUSA, USA_PE_2, scope1)
-const proof8 = await generateProof(identity6, groupUSA, USA_PE_2, scope1)
+const proof5 = await generateProof(identity1, groupUSA, USA_PE_1, scope1) // V
+const proof6 = await generateProof(identity4, groupUSA, USA_PE_2, scope1) // V
+const proof7 = await generateProof(identity5, groupUSA, USA_PE_2, scope1) // V
+const proof8 = await generateProof(identity6, groupUSA, USA_PE_2, scope1) // V
 
 //USA_R
-const proof9 = await generateProof(identity1, groupUSA, USA_R_1, scope2)
-const proof10 = await generateProof(identity4, groupUSA, USA_R_1, scope2)
-const proof11 = await generateProof(identity5, groupUSA, USA_R_2, scope2)
-const proof12 = await generateProof(identity6, groupUSA, USA_R_2, scope2)
+const proof9 = await generateProof(identity1, groupUSA, USA_R_1, scope2) // V
+const proof10 = await generateProof(identity4, groupUSA, USA_R_1, scope2) // V
+const proof11 = await generateProof(identity5, groupUSA, USA_R_2, scope2) // V
+const proof12 = await generateProof(identity6, groupUSA, USA_R_2, scope2) // V
 
 //revote
-const proof13 = await generateProof(identity2, groupTW, TW_R_1, scope2)
+const proof13 = await generateProof(identity2, groupTW, TW_R_1, scope2) // V
 
 //wrong scope
-const proof14 = await generateProof(identity3, groupTW, TW_R_2, "Health Insurance")
+const proof14 = await generateProof(identity3, groupTW, TW_R_2, "Health Insurance") // X
 
 //fake group
-const proof15 = await generateProof(identity4, groupUSA, TW_PE_2, scope1)
+const proof15 = await generateProof(identity4, groupUSA, TW_PE_2, scope1) // V
 proof15.merkleTreeRoot = proof1.merkleTreeRoot
 
 //fake result
 const proof16 = proof1
-proof16.message = proof3.message
+proof16.message = proof3.message // V
 
 
 function proof_js_to_sol(proof) {
