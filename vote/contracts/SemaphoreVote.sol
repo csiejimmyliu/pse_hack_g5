@@ -195,7 +195,7 @@ contract SemaphoreVote is ISemaphore, SemaphoreGroups {
 
     function castVote(uint256 pollId, SemaphoreProof calldata proof) public {
         require(proof.message < polls[pollId].optionsNum, "Option out of bounds");
-        require(keccak256(abi.encodePacked(proof.scope)) == keccak256(abi.encodePacked(polls[pollId].scope)), "Invalid scope");
+        require(stringToUint(polls[pollId].scope) == proof.scope, "Invalid Scope");
         uint256 groupId = polls[pollId].groupId;
 
         validateProof(groupId, proof);
@@ -227,5 +227,9 @@ contract SemaphoreVote is ISemaphore, SemaphoreGroups {
         polls[index].settled = true;
         emit PollSettled(index, result);
         return result;
+    }
+    function stringToUint(string memory s) public pure returns (uint256) {
+        bytes memory a = bytes(s);
+        return uint256(bytes32(a));
     }
 }
