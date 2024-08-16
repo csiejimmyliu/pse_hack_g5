@@ -103,8 +103,8 @@ const proof15 = await generateProof(identity4, groupUSA, TW_PE_2, scope1) // V
 proof15.merkleTreeRoot = proof1.merkleTreeRoot
 
 //fake result
-// const proof16 = proof1
-// proof16.message = proof3.message // V
+const proof16 = structuredClone(proof1)
+proof16.message = proof3.message // V
 
 
 function proof_js_to_sol(proof) {
@@ -144,24 +144,42 @@ var pool = [
 */
 
 var pool = [
+    "groupTWCommitment",
     groupTWCommitment,
+    "groupUSACommitment",
     groupUSACommitment,
+    "proof1",
     proof_js_to_sol(proof1),
+    "proof2",
     proof_js_to_sol(proof2),
+    "proof3",
     proof_js_to_sol(proof3),
+    "proof4",
     proof_js_to_sol(proof4),
+    "proof5",
     proof_js_to_sol(proof5),
+    "proof6",
     proof_js_to_sol(proof6),
+    "proof7",
     proof_js_to_sol(proof7),
+    "proof8",
     proof_js_to_sol(proof8),
+    "proof9",
     proof_js_to_sol(proof9),
+    "proof10",
     proof_js_to_sol(proof10),
+    "proof11",
     proof_js_to_sol(proof11),
+    "proof12",
     proof_js_to_sol(proof12),
+    "proof13",
     proof_js_to_sol(proof13),
+    "proof14",
     proof_js_to_sol(proof14),
+    "proof15",
     proof_js_to_sol(proof15),
-    // proof_js_to_sol(proof16),
+    "proof16",
+    proof_js_to_sol(proof16),
 ]
 
 
