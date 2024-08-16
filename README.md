@@ -8,3 +8,10 @@ yarn add @semaphore-protocol/core
 yarn add @semaphore-protocol/contracts
 yarn add circomlibjs
 ```
+## Bug
+* BigInt in nodejs convert to string
+
+## Todo
+* UI interface
+* Random number generator of tie vote
+
